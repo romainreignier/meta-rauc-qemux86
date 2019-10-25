@@ -1,0 +1,6 @@
+bootloader --ptable gpt
+part /boot --source rootfs --rootfs-dir=${IMAGE_ROOTFS}/boot --fstype=vfat --ondisk sda --label boot --active --align 1024
+part /rescue --source rootfs --ondisk sda --fstype=ext4 --label rescue --align 1024 --exclude-path boot
+part / --source rootfs --ondisk sda --fstype=ext4 --label rootA --align 1024 --exclude-path boot
+part /systemb --source rootfs --ondisk sda --fstype=ext4 --label rootB --align 1024 --exclude-path boot
+
