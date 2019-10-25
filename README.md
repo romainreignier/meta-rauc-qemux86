@@ -54,3 +54,11 @@ IMAGE_INSTALL_append = " \
 EXTRA_IMAGEDEPENDS += "ovmf"
 PREFERRED_RPROVIDER_virtual/grub-bootconf = "rauc-qemu-grubconf"
 ```
+
+Start qemu with:
+
+```
+runqemu wic nographic ovmf
+```
+
+Inspired from [this Poky patch](https://lists.yoctoproject.org/pipermail/yocto/2018-November/043242.html).
