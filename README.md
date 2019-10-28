@@ -1,44 +1,34 @@
-This README file contains information on the contents of the meta-rauc-qemu layer.
+# `meta-rauc-qemu`
 
-Please see the corresponding sections below for details.
+This meta has been created in order to demonstrate how to use [meta-rauc](https://github.com/rauc/meta-rauc) on a x86 taget using grub (and maybe later, UEFI directly).
 
-Dependencies
-============
+To ease the demonstration, qemu is used.
 
-  URI: <first dependency>
-  branch: <branch name>
+**WARNING the meta is not finished yet and does not work.**
 
-  URI: <second dependency>
-  branch: <branch name>
+## Dependencies
 
-  .
-  .
-  .
+  URI: git://git.openembedded.org/bitbake
 
-Patches
-=======
+  URI: git://git.openembedded.org/openembedded-core
+  layers: meta
+  branch: master
 
-Please submit any patches against the meta-rauc-qemu layer to the xxxx mailing list (xxxx@zzzz.org)
-and cc: the maintainer:
+## Patches
 
-Maintainer: XXX YYYYYY <xxx.yyyyyy@zzzzz.com>
+For any comments and issue, use the Github issue tab.
 
-Table of Contents
-=================
+For patch, just send a Github Pull Request.
 
-  I. Adding the meta-rauc-qemu layer to your build
- II. Misc
+## Table of Contents
 
+1. Adding the meta-rauc-qemu layer to your build
 
-I. Adding the meta-rauc-qemu layer to your build
-=================================================
+### 1. Adding the meta-rauc-qemu layer to your build
 
-Run 'bitbake-layers add-layer meta-rauc-qemu'
+Run
 
-II. Misc
-========
-
---- replace with specific information about the meta-rauc-qemu layer ---
+	bitbake-layers add-layer meta-rauc-qemu
 
 Add to `local.conf`:
 
@@ -62,3 +52,4 @@ runqemu wic nographic ovmf
 ```
 
 Inspired from [this Poky patch](https://lists.yoctoproject.org/pipermail/yocto/2018-November/043242.html).
+
