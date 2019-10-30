@@ -18,6 +18,10 @@ To ease the demonstration, [QEMU](https://www.qemu.org/) is used.
   layers: meta-oe
   branch: warrior
 
+  URI: https://github.com/rauc/meta-rauc.git
+  layers: meta-rauc
+  branch: warrior
+
 ## Patches
 
 For any comments and issue, use the Github issue tab.
@@ -63,6 +67,9 @@ VIRTUAL-RUNTIME_init_manager = "systemd"
 
 # Install ssh server
 IMAGE_INSTALL_append = " dropbear"
+
+# Install RAUC
+IMAGE_INSTALL_append = " rauc"
 ```
 
 Start qemu with:
