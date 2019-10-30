@@ -33,6 +33,7 @@ Run
 Add to `local.conf`:
 
 ```
+MACHINE ?= "qemux86-64"
 MACHINE_FEATURES += "pcbios efi"
 IMAGE_FSTYPES += "wic"
 WKS_FILE = "qemux86-grub-efi.wks"
