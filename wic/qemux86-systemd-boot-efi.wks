@@ -1,0 +1,6 @@
+bootloader --ptable gpt --timeout=5 --append="console=ttyS0,115200"
+part /boot --source bootimg-efi --sourceparams="loader=systemd-boot" --fstype=vfat --ondisk sda --label boot0 --active --align 1024 --fixed-size=100
+part /boot1  --sourceparams="loader=systemd-boot" --fstype=vfat --ondisk sda --label boot1 --active --align 1024 --fixed-size=100
+part / --source rootfs --ondisk sda --fstype=ext4 --label system0 --align 1024
+part /system1 --source rootfs --ondisk sda --fstype=ext4 --label system1 --align 1024
+
