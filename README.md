@@ -46,8 +46,8 @@ Add to `local.conf`:
 
 ```
 # systemd-boot version
-MACHINE_FEATURES += "pcbios efi"
-DISTRO_FEATURES += "efi"
+MACHINE_FEATURES_append = " pcbios efi"
+DISTRO_FEATURES_append = " efi"
 IMAGE_FSTYPES += "wic"
 WKS_FILE = "qemux86-systemd-boot-efi.wks"
 EFI_PROVIDER = "systemd-boot"
@@ -58,9 +58,9 @@ IMAGE_INSTALL_append = " \
 EXTRA_IMAGEDEPENDS += "ovmf"
 
 # Only use systemd as init
-DISTRO_FEATURES += "systemd"
+DISTRO_FEATURES_append = " systemd"
 DISTRO_FEATURES_remove = "sysvinit"
-DISTRO_FEATURES_BACKFILL_CONSIDERED += "sysvinit"
+DISTRO_FEATURES_BACKFILL_CONSIDERED_append = " sysvinit"
 VIRTUAL-RUNTIME_initscripts = ""
 VIRTUAL-RUNTIME_syslog = ""
 VIRTUAL-RUNTIME_init_manager = "systemd"
